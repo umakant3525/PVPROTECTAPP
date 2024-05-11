@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   poweredByText: {
     color: "hsla(240, 2%, 54%, 1)",
-    fontSize: 25,
+    fontSize: 20,
     marginBottom: 10,
   },
   poweredByLogo: {
