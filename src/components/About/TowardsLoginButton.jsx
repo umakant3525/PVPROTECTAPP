@@ -3,7 +3,7 @@ import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { useNavigation } from '@react-navigation/native';
 
-const LoginButton = () => {
+const TowardsLoginButton = () => {
   const navigation = useNavigation();
 
   const goToLoginScreen = () => {
@@ -19,7 +19,7 @@ const LoginButton = () => {
   );
 };
 
-export default LoginButton;
+export default TowardsLoginButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
