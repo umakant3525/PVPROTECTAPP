@@ -3,8 +3,8 @@ import { StyleSheet, View, Text, SafeAreaView, Image, Animated } from "react-nat
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 // Define image sources
-const pvprotectLogo = require("../assets/pvprotectlogobgrm.png");
-const sustainfyLogo = require("../assets/sustainfylogo.png");
+const pvprotectLogo = require("../../assets/pvprotectlogobgrm.png");
+const sustainfyLogo = require("../../assets/sustainfylogo.png");
 
 const HomeScreen = () => {
   const logoAnimation = new Animated.Value(0);

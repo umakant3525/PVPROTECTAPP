@@ -12,8 +12,8 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Ionicons } from "@expo/vector-icons";
-import LoginButton from "../components/Login/LoginButton";
-import LoginImg from "../components/Login/LoginImg";
+import LoginButton from "./LoginButton";
+import LoginImg from "./LoginImg";
 
 const ClientLoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     flex: 1,
-    marginRight: 30, // Adjust this value to increase/decrease space between text input and icon
+    marginRight: 10, // Adjust this value to increase/decrease space between text input 
   },
   icon: {
     position: "absolute",
