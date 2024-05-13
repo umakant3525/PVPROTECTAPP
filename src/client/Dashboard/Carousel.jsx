@@ -15,7 +15,7 @@ const Carousel = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
-    <View >
+    <View  style={styles.container}>
       <ScrollView
         horizontal
         pagingEnabled
@@ -74,6 +74,9 @@ const Pagination = ({ data, scrollX }) => {
 };
 
 const styles = StyleSheet.create({
+  container : {
+    marginVertical : hp('2%')
+  },
   paginationContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
