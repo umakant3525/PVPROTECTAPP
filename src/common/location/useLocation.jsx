@@ -7,15 +7,27 @@ const useLocation = () => {
     longitude: null,
     city: null,
     errorMessage: null,
+    loading: true, // Add loading state within locationData
   });
 
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
+      try {
+        if (status !== "granted") {
+          setLocationData(prevState => ({
+            ...prevState,
+            errorMessage: "Permission to access location was denied by the user.",
+            loading: false, // Set loading to false when permission is denied
+          }));
+          return;
+        }
+      } catch (error) {
+        console.error("User not given access: ", error);
         setLocationData(prevState => ({
           ...prevState,
-          errorMessage: "Permission to access location was denied by the user."
+          errorMessage: "You haven't given access to access location.",
+          loading: false, // Set loading to false on error
         }));
         return;
       }
@@ -28,13 +40,20 @@ const useLocation = () => {
         let addressResponse = await Location.reverseGeocodeAsync({ latitude, longitude });
         if (addressResponse && addressResponse.length > 0) {
           const city = addressResponse[0].city;
-          setLocationData({ latitude, longitude, city, errorMessage: null });
+          setLocationData({
+            latitude,
+            longitude,
+            city,
+            errorMessage: null,
+            loading: false, // Set loading to false when location data is obtained
+          });
         }
       } catch (error) {
-        console.error("Error fetching location: ", error);
+        console.error("Error in getting address details: ", error);
         setLocationData(prevState => ({
           ...prevState,
-          errorMessage: "Error fetching location."
+          errorMessage: "Error in getting address details.",
+          loading: false, // Set loading to false on error
         }));
       }
     })();
