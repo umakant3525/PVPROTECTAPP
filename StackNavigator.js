@@ -1,11 +1,19 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet } from 'react-native';
 // import HomeScreen from './src/common/HomeScreen';
 // import AboutSliderScreen from './src/common/about/AboutSliderScreen';
-// import ClientLoginScreen from './src/client/Login/ClientLoginScreen';
-import ClientDashboardScreen from './src/client/Dashboard/ClientDashboardScreen';
-
+// import ClientLoginScreen from './src/client/login/ClientLoginScreen';
+import ClientDashboardScreen from './src/client/dashboard/ClientDashboardScreen';
+import ReportsScreen from './src/client/reports/ReportsScreen';
+import BillAnalysisScreen from './src/client/bill_analysis/BillAnalysisScreen';
+import GenerationScreen from './src/client/generation/GenerationScreen';
+import CleaningScreen from './src/client/cleaning/CleaningScreen';
+import EpiScreen from './src/client/epi/EpiScreen';
+import PlantInformationScreen from './src/client/plant_information/PlantInformationScreen';
+import IrradiationScreen from './src/client/irradiation/IrradiationScreen';
+import FinancialAnalysisScreen from './src/client/financial_analysis/FinancialAnalysisScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -14,11 +22,92 @@ const StackNavigator = () => {
       <Stack.Navigator>
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} /> */}
         {/* <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} /> */}
-         {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }} /> 
+        {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  />
+        <Stack.Screen
+          name="BillAnalysisScreen"
+          component={BillAnalysisScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="GenerationScreen"
+          component={GenerationScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="CleaningScreen"
+          component={CleaningScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="ReportsScreen"
+          component={ReportsScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="EpiScreen"
+          component={EpiScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="PlantInformationScreen"
+          component={PlantInformationScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="IrradiationScreen"
+          component={IrradiationScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
+        <Stack.Screen
+          name="FinancialAnalysisScreen"
+          component={FinancialAnalysisScreen}
+          options={{
+            headerStyle: styles.header,
+            headerTitleAlign: 'center',
+            headerTitleStyle: styles.headerTitle
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  header: {
+        borderBottomWidth: 0, // No bottom border
+  },
+  headerTitle: {
+    fontWeight: 'bold',
+  },
+});
 
 export default StackNavigator;

@@ -1,8 +1,11 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 import { Fontisto, FontAwesome5, Feather } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
-const Cards = ({ navigation, latitude, longitude }) => {
+const Cards = () => {
+
+  const navigation = useNavigation();
   const cardsData = [
     {
       id: "1",
@@ -30,21 +33,21 @@ const Cards = ({ navigation, latitude, longitude }) => {
       name: "Reports",
       screenName: "ReportsScreen",
       thumbnail: 40,
-      iconComponent: <Fontisto name="leaf" size={24} color="black" />,
+      iconComponent: <FontAwesome5 name="city" size={24} color="black" />,
     },
     {
       id: "5",
       name: "EPI",
       screenName: "EpiScreen",
       thumbnail: 50,
-      iconComponent: <Fontisto name="heart-empty" size={24} color="black" />,
+      iconComponent: <FontAwesome5 name="city" size={24} color="black" />
     },
     {
       id: "6",
       name: "Plant Information",
-      screenName: "PlantinformationScreen",
+      screenName: "PlantInformationScreen",
       thumbnail: 60,
-      iconComponent: <Fontisto name="notifications" size={24} color="black" />,
+      iconComponent: <FontAwesome5 name="city" size={24} color="black" />
     },
     {
       id: "7",
@@ -70,7 +73,7 @@ const Cards = ({ navigation, latitude, longitude }) => {
   ];
 
   const handleWeatherCategoryPress = (screenName) => {
-    navigation.navigate(screenName, { latitude, longitude });
+    navigation.navigate(screenName);
   };
 
   return (
