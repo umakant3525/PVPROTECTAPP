@@ -36,36 +36,21 @@ const Carousel = () => {
 };
 
 const Pagination = ({ data, scrollX }) => {
+  const position = Animated.divide(scrollX, width);
+
   return (
     <View style={styles.paginationContainer}>
       {data.map((_, idx) => {
-        const inputRange = [(idx - 1) * width, idx * width, (idx + 1) * width];
-
-        const dotSize = scrollX.interpolate({
-          inputRange,
-          outputRange: [6, 15, 6],
-          extrapolate: 'clamp',
-        });
-
-        const opacity = scrollX.interpolate({
-          inputRange,
-          outputRange: [0.2, 1, 0.2],
-          extrapolate: 'clamp',
-        });
-
-        const backgroundColor = scrollX.interpolate({
-          inputRange,
-          outputRange: ['#000', '#00C766', '#000'],
-          extrapolate: 'clamp',
+        const opacity = position.interpolate({
+          inputRange: [idx - 1, idx, idx + 1],
+          outputRange: [0.3, 1, 0.3],
+          extrapolate: "clamp",
         });
 
         return (
           <Animated.View
             key={idx.toString()}
-            style={[
-              styles.dot,
-              { width: dotSize, height: dotSize, opacity, backgroundColor },
-            ]}
+            style={[styles.dot, { opacity }]}
           />
         );
       })}
@@ -80,11 +65,14 @@ const styles = StyleSheet.create({
   paginationContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    top: 10,
+    marginTop: 10,
   },
   dot: {
-    borderRadius: 7.5,
-    marginHorizontal: 5,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#00C766',
+    marginHorizontal: 4,
   },
   image: {
     borderRadius: 20,
