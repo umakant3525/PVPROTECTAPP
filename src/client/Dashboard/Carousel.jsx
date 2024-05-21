@@ -15,7 +15,7 @@ const Carousel = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
-    <View  style={styles.container}>
+    <View style={styles.container}>
       <ScrollView
         horizontal
         pagingEnabled
@@ -27,7 +27,7 @@ const Carousel = () => {
         scrollEventThrottle={16}
       >
         {images.map((image, index) => (
-          <Image key={index} source={image} style={[styles.image, { zIndex: 1 }]} />
+          <Image key={index} source={image} style={styles.image} />
         ))}
       </ScrollView>
       <Pagination data={images} scrollX={scrollX} />
@@ -74,14 +74,14 @@ const Pagination = ({ data, scrollX }) => {
 };
 
 const styles = StyleSheet.create({
-  container : {
-    marginVertical : hp('2%')
+  container: {
+    marginVertical: hp('2%'),
   },
   paginationContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
     top: 10,
-    },
+  },
   dot: {
     borderRadius: 7.5,
     marginHorizontal: 5,
