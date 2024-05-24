@@ -7,7 +7,7 @@ const TowardsLoginButton = () => {
   const navigation = useNavigation();
 
   const goToLoginScreen = () => {
-    navigation.navigate('HomeScreen'); // Navigate to HomeScreen
+    navigation.navigate('ClientLoginScreen'); 
   };
 
   return (

@@ -3,7 +3,7 @@ import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
-const pdficon = require("/home/umakant/Desktop/my-app/assets/reports/pdf.png");
+const pdficon = require("../../../assets/reports/pdf.png");
 
 const reportData = [
   { id: '1', title: 'Finance Report', date: '09.01.24 at 10:57', link: "https://drive.google.com/file/d/1XH1jFIc71H6b_DjyEe0016Xh3LozYk7f/view?usp=drive_link" },

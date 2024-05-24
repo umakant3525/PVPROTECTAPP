@@ -20,15 +20,15 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center'  , headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold', fontSize: 24 } }} />
-        <Stack.Screen name="BillAnalysisScreen" component={BillAnalysisScreen} />
-        <Stack.Screen name="GenerationScreen" component={GenerationScreen} />
-        <Stack.Screen name="CleaningScreen" component={CleaningScreen} />
-        <Stack.Screen name="EpiScreen" component={EpiScreen} />
+          {/* <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />  */}
+        {/* <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} />  */}
+        {/* <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center'  , headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} /> */}
+        {/* <Stack.Screen name="BillAnalysisScreen" component={BillAnalysisScreen} /> */}
+        {/* <Stack.Screen name="GenerationScreen" component={GenerationScreen} /> */}
+        {/* <Stack.Screen name="CleaningScreen" component={CleaningScreen} /> */}
+        <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} />       
         <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} />
         <Stack.Screen name="IrradiationScreen" component={IrradiationScreen} />
         <Stack.Screen name="FinancialAnalysisScreen" component={FinancialAnalysisScreen} />
