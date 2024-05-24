@@ -25,7 +25,8 @@ const StackNavigator = () => {
         {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} />  */}
         {/* <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }} /> */}
         {/* <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center'  , headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="BillAnalysisScreen" component={BillAnalysisScreen} /> */}
+        {/* <Stack.Screen name="Bill_Analysis" component={BillAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
+
         {/* <Stack.Screen name="GenerationScreen" component={GenerationScreen} /> */}
         {/* <Stack.Screen name="CleaningScreen" component={CleaningScreen} /> */}
         {/* <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} />        */}

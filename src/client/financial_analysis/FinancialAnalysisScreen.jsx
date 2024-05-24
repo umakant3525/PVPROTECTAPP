@@ -15,14 +15,15 @@ const data = [
   { data: "NVP", values: "2,000 RS" },
 ];
 
-const billIcon = require("../../../assets/billanalysis/billicon.png");
+
+const financeIcon = require("../../../assets/financeanalysis/finance.png");
 
 const FinancialAnalysisScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.descriptionContainer}>
-          <Image source={billIcon} style={styles.image} />
+          <Image source={financeIcon} style={styles.image} />
           <Text style={styles.descriptionText}>
             "Power your future with green finance with PV protect."
           </Text>
