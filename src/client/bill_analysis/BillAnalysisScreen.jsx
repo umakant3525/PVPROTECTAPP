@@ -6,13 +6,11 @@ import {
 } from 'react-native-responsive-screen';
 
 const data = [
-  { data: "User Name", values: "Mr. Ruturaj Deshmukh" },
-  { data: "Initial investment", values: "7,000 RS" },
-  { data: "Maintenance cost", values: "8,000 RS" },
-  { data: "Total unit generation till date", values: "2,000 RS" },
-  { data: "Pay back period", values: "2,000 RS" },
-  { data: "IRR", values: "2,000 RS" },
-  { data: "NVP", values: "2,000 RS" },
+  { details: "1st Payment", amount: "100 Rs", status: "paid", date: "01-01-2023" },
+  { details: "2st Payment ", amount: "7,000 RS", status: "Paid", date: "15-02-2023" },
+  { details: "3nd Payment ", amount: "8,000 RS", status: "Pending", date: "20-03-2023" },
+  { details: "4rd payment ", amount: "2,000 RS", status: "pending", date: "01-04-2023" },
+  { details: "Payment track ", amount: "2,000 RS", status: "paid", date: "10-05-2023" }
 ];
 
 const billIcon = require("../../../assets/billanalysis/billicon.png");
@@ -20,23 +18,28 @@ const billIcon = require("../../../assets/billanalysis/billicon.png");
 const BillAnalysisScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.descriptionContainer}>
-          <Image source={billIcon} style={styles.image} />
-          <Text style={styles.descriptionText}>
-            "Power your future with green finance with PV protect."
-          </Text>
-        </View>
-
+      <View style={styles.descriptionContainer}>
+        <Image source={billIcon} style={styles.image} />
+        <Text style={styles.descriptionText}>
+        " Bill analysis with PV Protect: Your roadmap to solar sustainability, one payment at a time. "
+         </Text>
+      </View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={true}>
         <View style={styles.tableContainer}>
           <View style={styles.tableHeaderRow}>
-            <Text style={styles.columnHeader}>Data</Text>
-            <Text style={styles.columnHeader}>Values</Text>
+            <Text style={styles.columnHeader}>Details</Text>
+            <Text style={styles.columnHeader}>Amount (RS)</Text>
+            <Text style={styles.columnHeader}>Status</Text>
+            <Text style={styles.columnHeader}>Date</Text>
           </View>
           {data.map((item, index) => (
             <View key={index} style={styles.tableRow}>
-              <Text style={styles.cell1}>{item.data}</Text>
-              <Text style={styles.cell2}>{item.values}</Text>
+              <Text style={styles.cell}>{item.details}</Text>
+              <Text style={styles.cell}>{item.amount}</Text>
+              <Text style={[styles.cell, item.status.toLowerCase() === 'paid' ? styles.statusPaid : styles.statusPending]}>
+                {item.status}
+              </Text>
+              <Text style={styles.cell}>{item.date}</Text>
             </View>
           ))}
         </View>
@@ -55,24 +58,25 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     marginVertical: hp('2%'),
-    alignItems: 'center', // Center align items in the description container
+    alignItems: 'center',
   },
   descriptionText: {
     fontSize: wp('4%'),
     textAlign: 'center',
     color: '#333',
-    marginTop: hp('1%'), // Add margin top to separate text from image
-    paddingHorizontal: wp('5%'), // Add horizontal padding for better text alignment
-    fontStyle: 'italic', // Make text italic
+    marginTop: hp('1%'),
+    paddingHorizontal: wp('5%'),
+    fontStyle: 'italic',
   },
   image: {
-    width: wp('20%'), // Adjust width as needed
-    height: wp('20%'), // Adjust height to maintain aspect ratio
-    resizeMode: 'contain', // Ensure the image fits within the specified dimensions
+    width: wp('20%'),
+    height: wp('20%'),
+    resizeMode: 'contain',
   },
   tableContainer: {
     borderRadius: 8,
     overflow: 'hidden',
+    width: wp('120%'),  // Ensure the table is wider than the screen
   },
   tableHeaderRow: {
     flexDirection: 'row',
@@ -94,23 +98,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECECEC',
   },
   columnHeader: {
-    flex: 1,
+    width: wp('25%'),
     fontWeight: 'bold',
     textAlign: 'center',
     paddingVertical: hp('1%'),
   },
-  cell1: {
-    flex: 1,
-    textAlign: 'center',
-    paddingVertical: hp('1%'),
-    fontWeight: '500',
-    fontSize: wp('4%'),
-  },
-  cell2: {
-    flex: 1,
+  cell: {
+    width: wp('25%'),
     textAlign: 'center',
     paddingVertical: hp('1%'),
     fontWeight: '300',
     fontSize: wp('4%'),
+  },
+  statusPaid: {
+    backgroundColor: '#A6FDB4',
+    color: '#000',
+    borderRadius: wp('5%'),
+    paddingVertical: hp('0.3%'),
+    paddingHorizontal: wp('0.5%'),
+    fontWeight: '400',
+  },
+  statusPending: {
+    backgroundColor: '#FFF0BB',
+    color: '#000',
+    borderRadius: wp('5%'),
+    paddingVertical: hp('0.3%'),
+    paddingHorizontal: wp('0.5%'),
+    fontWeight: '400',
   },
 });
