@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     color: "#000000",
   },
   iconContainer: {
-    width: wp("10%"),
+    width: wp("20%"),
     justifyContent: "center",
     alignItems: "center",
   },
