@@ -31,7 +31,7 @@ const Cards = () => {
     {
       id: "4",
       name: "Reports",
-      screenName: "ReportsScreen",
+      screenName: "Reports",
       thumbnail: 40,
       iconComponent: <FontAwesome5 name="city" size={24} color="black" />,
     },
