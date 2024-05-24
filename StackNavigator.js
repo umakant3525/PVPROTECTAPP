@@ -23,8 +23,8 @@ const StackNavigator = () => {
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} /> */}
         {/* <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} /> */}
         {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  />
-        <Stack.Screen
+        {/* <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  /> */}
+        {/* <Stack.Screen
           name="BillAnalysisScreen"
           component={BillAnalysisScreen}
           options={{
@@ -32,7 +32,7 @@ const StackNavigator = () => {
             headerTitleAlign: 'center',
             headerTitleStyle: styles.headerTitle
           }}
-        />
+        /> */}
         <Stack.Screen
           name="GenerationScreen"
           component={GenerationScreen}
