@@ -10,7 +10,7 @@ const Cards = () => {
     {
       id: "1",
       name: "Bill Analysis",
-      screenName: "BillAnalysisScreen",
+      screenName: "Bill_Analysis",
       thumbnail: 10,
       iconComponent: <Fontisto name="day-sunny" size={24} color="black" />,
     },
@@ -59,7 +59,7 @@ const Cards = () => {
     {
       id: "8",
       name: "Financial Analysis",
-      screenName: "FinancialAnalysisScreen",
+      screenName: "Financial_Analysis",
       thumbnail: 80,
       iconComponent: <FontAwesome5 name="users" size={24} color="black" />,
     },

@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   statusPending: {
     backgroundColor: '#FFF0BB',
-    color: '#000',
+    color: '#000npm',
     borderRadius: wp('5%'),
     paddingVertical: hp('0.3%'),
     paddingHorizontal: wp('0.5%'),
