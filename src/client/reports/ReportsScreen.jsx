@@ -32,26 +32,30 @@ const ReportsScreen = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-        <ScrollView>
-          {reportData.map((report, index) => (
-            <View key={report.id} style={styles.reportItem}>
-              <Image source={pdficon} style={styles.icon} />
-              <View style={styles.textContainer}>
-                <Text style={styles.reportTitle}>{index + 1}. {report.title}</Text>
-                <View style={styles.subTextContainer}>
-                  <TouchableOpacity onPress={() => handleDownload(report.link)}>
-                    <Feather name="download" size={16} color="black" />
-                  </TouchableOpacity>
-                  <Text style={styles.date}>{report.date}</Text>
-                </View>
+      <ScrollView>
+        {reportData.map((report, index) => (
+          <View key={report.id} style={styles.reportItem}>
+            <Image source={pdficon} style={styles.icon} />
+            <View style={styles.textContainer}>
+              <Text style={styles.reportTitle}>{index + 1}. {report.title}</Text>
+              <View style={styles.subTextContainer}>
+                <Text style={styles.date}>{report.date}</Text>
               </View>
             </View>
-          ))}
-        </ScrollView>
-
+            <View style={styles.iconContainer}>
+              <TouchableOpacity onPress={() => handleDownload(report.link)} style={styles.iconButton}>
+                <Feather name="download" size={24} color="black" />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => handleDownload(report.link)} style={styles.iconButton}>
+                <Feather name="eye" size={24} color="black" />
+              </TouchableOpacity>
+            </View>
+          </View>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 export default ReportsScreen;
 
@@ -78,7 +82,8 @@ const styles = StyleSheet.create({
   },
   reportTitle: {
     fontSize: hp('2.2%'),
-    fontWeight: '500'  },
+    fontWeight: '500',
+  },
   subTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -87,6 +92,12 @@ const styles = StyleSheet.create({
   date: {
     fontSize: hp('1.8%'),
     color: '#555',
-    marginLeft: wp('3%'),
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconButton: {
+    marginLeft: wp('5%'),
   },
 });
