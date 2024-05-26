@@ -36,21 +36,36 @@ const Carousel = () => {
 };
 
 const Pagination = ({ data, scrollX }) => {
-  const position = Animated.divide(scrollX, width);
-
   return (
     <View style={styles.paginationContainer}>
       {data.map((_, idx) => {
-        const opacity = position.interpolate({
-          inputRange: [idx - 1, idx, idx + 1],
-          outputRange: [0.3, 1, 0.3],
-          extrapolate: "clamp",
+        const inputRange = [(idx - 1) * width, idx * width, (idx + 1) * width];
+
+        const dotWidth = scrollX.interpolate({
+          inputRange,
+          outputRange: [12, 30, 12],
+          extrapolate: 'clamp',
+        });
+
+        const opacity = scrollX.interpolate({
+          inputRange,
+          outputRange: [0.2, 1, 0.2],
+          extrapolate: 'clamp',
+        });
+
+        const backgroundColor = scrollX.interpolate({
+          inputRange,
+          outputRange: ['#000', '#00C766', '#000'],
+          extrapolate: 'clamp',
         });
 
         return (
           <Animated.View
             key={idx.toString()}
-            style={[styles.dot, { opacity }]}
+            style={[
+              styles.dot,
+              { width: dotWidth, opacity, backgroundColor },
+            ]}
           />
         );
       })}
@@ -63,22 +78,24 @@ const styles = StyleSheet.create({
     marginVertical: hp('2%'),
   },
   paginationContainer: {
+    marginTop : ('2%'),
     flexDirection: 'row',
-    alignSelf: 'center',
-    marginTop: 10,
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: '#00C766',
-    marginHorizontal: 4,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
     borderRadius: 20,
     width: wp("97%"),
     height: 200,
     marginHorizontal: 5
+  },
+  dot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginHorizontal: 2,
+    backgroundColor: '#000)',
   },
 });
 
