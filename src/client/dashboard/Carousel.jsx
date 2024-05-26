@@ -6,10 +6,10 @@ const { width } = Dimensions.get("window");
 
 const Carousel = () => {
   const images = [
-    require("../../../assets/carousel/1.jpg"),
-    require("../../../assets/carousel/2.jpg"),
-    require("../../../assets/carousel/3.jpg"),
-    require("../../../assets/carousel/4.jpg"),
+    require("../../../assets/clientdashboard/1.jpg"),
+    require("../../../assets/clientdashboard/2.jpg"),
+    require("../../../assets/clientdashboard/3.jpg"),
+    require("../../../assets/clientdashboard/4.jpg"),
   ];
 
   const scrollX = useRef(new Animated.Value(0)).current;
