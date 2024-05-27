@@ -1,48 +1,38 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
-import { Ionicons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import { ProgressChart } from "react-native-chart-kit";
-import CleningList from "./CleningList";
+import CleaningList from "./CleningList"
+import CleaningBottomSheet from "./CleningBottomSheet";
+import { cleaningData } from "./cleningdata";
 
-const CleaningScreen = () => {
-
-
-  const cleaningData = [
-    { cycleNumber: 1,  date: "20/22/2024", doneBy: "Umakant" },
-    { cycleNumber: 2, date: "21/22/2024", doneBy: "John" },
-    { cycleNumber: 3,  date: "22/22/2025", doneBy: "Alice" },
-    { cycleNumber: 4,   date: "20/22/2024", doneBy: "Umakant" },
-    { cycleNumber: 5,  date: "21/22/2024", doneBy: "John" },
-    { cycleNumber: 6, date: "22/22/2025", doneBy: "Alice" },
-    { cycleNumber: 7,  date: "20/22/2024", doneBy: "Umakant" },
-    { cycleNumber: 8,  date: "21/22/2024", doneBy: "John" }
-  ];
+const CleaningMainScreen = () => {
   const completedCycles = cleaningData.length;
   const totalCycles = 24;
   const progress = completedCycles / totalCycles;
 
-  // Data for the ProgressChart
   const progressChartData = {
     labels: ["Cycles"],
     data: [progress],
   };
 
-  // Configurations for the ProgressChart
   const chartConfig = {
     backgroundGradientFrom: "#fff",
     backgroundGradientTo: "#fff",
     decimalPlaces: 6,
-    color: (opacity = 1) => `rgba(46, 204, 113, ${opacity})`, // green color
+    color: (opacity = 1) => `rgba(46, 204, 113, ${opacity})`,
     labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+  };
+
+  const [selectedCycle, setSelectedCycle] = useState(null);
+
+  const handleCyclePress = (cycle) => {
+    setSelectedCycle(cycle);
   };
 
   return (
     <ScrollView>
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.card}>
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>
@@ -53,7 +43,7 @@ const CleaningScreen = () => {
           <View style={styles.progressContainer}>
             <ProgressChart
               data={progressChartData}
-              width={wp("88%")} // Use responsive width
+              width={wp("88%")}
               height={220}
               strokeWidth={30}
               radius={90}
@@ -62,13 +52,14 @@ const CleaningScreen = () => {
             />
           </View>
         </View>
-        <CleningList cleaningData={cleaningData}/>
-      </SafeAreaView>
+        <CleaningList handleCyclePress={handleCyclePress} />
+        {selectedCycle && <CleaningBottomSheet cycle={selectedCycle} />}
+      </View>
     </ScrollView>
   );
 };
 
-export default CleaningScreen;
+export default CleaningMainScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -104,32 +95,5 @@ const styles = StyleSheet.create({
   progressContainer: {
     marginTop: wp("5%"),
     alignItems: "center",
-  },
-  cycleContainer: {
-    flexDirection: "column",
-  },
-  cycle: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 15,
-    padding: 10,
-    borderRadius: 5,
-    backgroundColor: "#f1f1f1",
-  },
-  cycleNumber: {
-    width: 20,
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  cycleText: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  cycleSubText: {
-    flex: 2,
-    fontSize: 14,
-    fontWeight: "300",
-    color: "#555",
   },
 });

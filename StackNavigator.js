@@ -8,7 +8,7 @@ import ClientDashboardScreen from './src/client/dashboard/ClientDashboardScreen'
 import ReportsScreen from './src/client/reports/ReportsScreen';
 import BillAnalysisScreen from './src/client/bill_analysis/BillAnalysisScreen';
 import GenerationScreen from './src/client/generation/GenerationScreen';
-import CleaningScreen from './src/client/cleaning/CleaningScreen';
+import CleaningMainScreen from './src/client/cleaning/CleaningMainScreen';
 import EpiScreen from './src/client/epi/EpiScreen';
 import PlantInformationScreen from './src/client/plant_information/PlantInformationScreen';
 import IrradiationScreen from './src/client/irradiation/IrradiationScreen';
@@ -27,7 +27,7 @@ const StackNavigator = () => {
         {/* <Stack.Screen name="Bill_Analysis" component={BillAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
 
         {/* <Stack.Screen name="GenerationScreen" component={GenerationScreen} /> */}
-                <Stack.Screen name="Cleaning_Cycle" component={CleaningScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+                <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
 
         {/* <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} />        */}
         {/* <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} /> */}
