@@ -2,7 +2,7 @@ export const cleaningData = [
   {
     cycleNumber: 1,
     date: "2024-05-20",
-    doneBy: "",
+    doneBy: "Ella",
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180",
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180",
@@ -10,7 +10,7 @@ export const cleaningData = [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
     description:
-      "Here is some dummy content. This could be a description of the cleaning service, some instructions, or any other relevant information."
+      "Initial cleaning of the office space. Vacuumed and mopped floors, dusted surfaces, and sanitized restrooms."
   },
   {
     cycleNumber: 2,
@@ -19,7 +19,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Deep cleaning of the kitchen area. Cleaned appliances, scrubbed countertops, and organized cabinets."
   },
   {
     cycleNumber: 3,
@@ -28,7 +28,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Focused on conference rooms. Wiped down tables, chairs, and whiteboards. Refilled supplies."
   },
   {
     cycleNumber: 4,
@@ -37,7 +37,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "General maintenance tasks. Checked and replaced light bulbs, emptied trash bins, and cleaned windows."
   },
   {
     cycleNumber: 5,
@@ -46,7 +46,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Tidying up common areas. Swept hallways, arranged lobby furniture, and organized magazines."
   },
   {
     cycleNumber: 6,
@@ -55,7 +55,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Outdoor cleaning tasks. Removed debris from entrance, watered plants, and cleaned exterior windows."
   },
   {
     cycleNumber: 7,
@@ -64,7 +64,7 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Inventory check and organization. Checked stock levels, labeled shelves, and rearranged supplies."
   },
   {
     cycleNumber: 8,
@@ -73,6 +73,6 @@ export const cleaningData = [
     workImages: [
       "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
     ],
-    description: ""
+    description: "Final touch-ups before the weekend. Spot cleaned high-traffic areas, polished surfaces, and refreshed air."
   }
 ];

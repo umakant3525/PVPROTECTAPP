@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { cleaningData } from "./cleningdata";
 
 const CleaningList = ({ handleCyclePress }) => {
@@ -10,7 +10,7 @@ const CleaningList = ({ handleCyclePress }) => {
       <View style={styles.headerRow}>
         <Text style={styles.headerText}>Cycle No. </Text>
         <Text style={styles.headerText}>Date</Text>
-        <Text style={styles.headerText}>More</Text>
+        <Text style={styles.headerText}>For More </Text>
       </View>
       {/* Data Rows */}
       {cleaningData.length > 0 ? (
@@ -20,7 +20,7 @@ const CleaningList = ({ handleCyclePress }) => {
               <Text style={styles.cycleText}>{item.cycleNumber}</Text>
               <Text style={styles.detailsText}>{item.date}</Text>
               <TouchableOpacity onPress={() => handleCyclePress(item)}>
-                <AntDesign name="down" size={24} color="#00C766" />
+                <MaterialIcons name="open-in-new" size={20} color="#00C766" />
               </TouchableOpacity>
             </View>
           </View>

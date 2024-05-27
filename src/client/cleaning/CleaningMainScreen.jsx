@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import { ProgressChart } from "react-native-chart-kit";
 import CleaningList from "./CleningList"
-import CleaningBottomSheet from "./CleningBottomSheet";
 import { cleaningData } from "./cleningdata";
+import CleaningPopUp from "./CleningPopUp";
 
 const CleaningMainScreen = () => {
   const completedCycles = cleaningData.length;
@@ -30,6 +30,10 @@ const CleaningMainScreen = () => {
     setSelectedCycle(cycle);
   };
 
+  const handleClosePopup = () => {
+    setSelectedCycle(null);
+  };
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -53,7 +57,12 @@ const CleaningMainScreen = () => {
           </View>
         </View>
         <CleaningList handleCyclePress={handleCyclePress} />
-        {selectedCycle && <CleaningBottomSheet cycle={selectedCycle} />}
+        {selectedCycle && (
+          <>
+            <View style={styles.overlay} />
+            <CleaningPopUp cycle={selectedCycle} onClose={handleClosePopup} />
+          </>
+        )}
       </View>
     </ScrollView>
   );
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#fff"
   },
   card: {
     marginTop: hp("2%"),
@@ -95,5 +104,13 @@ const styles = StyleSheet.create({
   progressContainer: {
     marginTop: wp("5%"),
     alignItems: "center",
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // semi-transparent black color
   },
 });
