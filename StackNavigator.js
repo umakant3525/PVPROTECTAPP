@@ -25,9 +25,10 @@ const StackNavigator = () => {
         {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} />  */}
         {/* <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center'  , headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} /> */}
         {/* <Stack.Screen name="Bill_Analysis" component={BillAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
+        <Stack.Screen name="Generation_Values" component={GenerationScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
 
-        {/* <Stack.Screen name="GenerationScreen" component={GenerationScreen} /> */}
-                <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        {/* <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
 
         {/* <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont : 2.5 , headerTitleStyle: { fontWeight: 'bold' } }} />        */}
         {/* <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} /> */}

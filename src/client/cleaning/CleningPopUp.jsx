@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Increased opacity
   },
   modalView: {
     width: wp('90%'),
@@ -60,8 +61,8 @@ const styles = StyleSheet.create({
   },
   closeIcon: {
     position: 'absolute',
-    top: hp('2%'),
-    right: wp('2%'),
+    top: hp('1%'),
+    right: wp('1%'),
   },
   title: {
     fontSize: wp('7%'),

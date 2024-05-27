@@ -16,7 +16,7 @@ const Cards = () => {
     },
     {
       id: "2",
-      name: "Generation",
+      name: "Generation_Values",
       screenName: "GenerationScreen",
       thumbnail: 20,
       iconComponent: <FontAwesome5 name="city" size={24} color="black" />,
