@@ -24,7 +24,7 @@ const Cards = () => {
     {
       id: "3",
       name: "Cleaning",
-      screenName: "CleaningScreen",
+      screenName: "Cleaning_Cycle",
       thumbnail: 30,
       iconComponent: <Feather name="cloud" size={24} color="black" />,
     },
