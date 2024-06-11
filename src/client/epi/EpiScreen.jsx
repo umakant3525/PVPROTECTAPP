@@ -1,5 +1,12 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+} from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -16,53 +23,51 @@ const epiData = [
     percentage: 95,
     updatedBy: "Umakant Shinde",
     date: "10/11/2023",
-    day: "Today"
+    day: "Today",
   },
   {
     id: 2,
     percentage: 80,
     updatedBy: "John Doe",
     date: "12/15/2023",
-    day: "Yesterday"
+    day: "Yesterday",
   },
   {
     id: 3,
     percentage: 60,
     updatedBy: "Jane Smith",
     date: "01/20/2024",
-    day: "Monday"
+    day: "Monday",
   },
   {
     id: 4,
     percentage: 45,
     updatedBy: "Alice Johnson",
     date: "03/05/2024",
-    day: "Monday"
-
+    day: "Monday",
   },
   {
     id: 5,
     percentage: 30,
     updatedBy: "Bob Williams",
     date: "04/10/2024",
-    day: "Monday"
+    day: "Monday",
   },
   {
     id: 6,
     percentage: 20,
     updatedBy: "Eve Brown",
     date: "05/15/2024",
-    day: "Monday"
+    day: "Monday",
   },
   {
     id: 7,
     percentage: 5,
     updatedBy: "Michael Lee",
     date: "06/20/2024",
-    day: "Monday"
+    day: "Monday",
   },
 ];
-
 
 const getIcon = (percentage) => {
   if (percentage > 75) return greenIcon;
@@ -72,7 +77,8 @@ const getIcon = (percentage) => {
 };
 
 const getTagColor = (day) => {
-  return day === "Today" ? "yellow" : "#ccc"; // Yellow for "Today", Grey for other days
+  if (day === "Today") return "yellow";
+   return "#cccccc";
 };
 
 const EpiScreen = () => {
@@ -82,9 +88,17 @@ const EpiScreen = () => {
         {epiData.map((data) => (
           <View style={styles.horizontalFlex} key={data.id}>
             <View style={styles.textContainer}>
-              <View style={[styles.tag , { backgroundColor: getTagColor(data.day) }]}>
-                <Text style={styles.tagText}>{data.day}</Text>
+              <View>
+                <View
+                  style={[
+                    styles.tag,
+                    { backgroundColor: getTagColor(data.day) },
+                  ]}
+                >
+                  <Text style={styles.tagText}>{data.day}</Text>
+                </View>
               </View>
+
               <Text style={styles.textDate}>{data.date}</Text>
               <Text style={styles.textUpdatedBy}>
                 Updated by:
@@ -135,8 +149,11 @@ const styles = StyleSheet.create({
     padding: wp("1%"),
   },
   tag: {
+    width : '70%',
     marginBottom: hp("1%"),
-    padding: wp("1%"),
+    paddingVertical: hp("0.5%"),
+    paddingHorizontal: wp("3%"),
+    borderRadius: wp("2%"),
   },
   tagText: {
     fontSize: wp("4%"),
@@ -157,12 +174,14 @@ const styles = StyleSheet.create({
     color: "#000000",
   },
   iconContainer: {
-    width: wp("20%"),
+    width: wp("30%"),
     justifyContent: "center",
     alignItems: "center",
+
   },
   icon: {
-    width: wp("15%"),
+    width: wp("100%"),
+    height : hp('7%'),
     resizeMode: "contain",
   },
   percentageContainer: {
@@ -176,4 +195,3 @@ const styles = StyleSheet.create({
     color: "#000",
   },
 });
-
