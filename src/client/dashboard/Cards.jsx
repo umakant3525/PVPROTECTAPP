@@ -1,75 +1,82 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
-import { Fontisto, FontAwesome5, Feather } from '@expo/vector-icons';
+import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Cards = () => {
-
   const navigation = useNavigation();
   const cardsData = [
     {
       id: "1",
       name: "Bill Analysis",
       screenName: "Bill_Analysis",
-      thumbnail: 10,
-      iconComponent: <Fontisto name="day-sunny" size={24} color="black" />,
+      description: "Expected bill: 45656",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Bill_Analysis_Logo.png'),
+      cardBackground: "#FFEAE9",
     },
     {
       id: "2",
-      name: "Generation_Values",
-      screenName: "GenerationScreen",
-      thumbnail: 20,
-      iconComponent: <FontAwesome5 name="city" size={24} color="black" />,
+      name: "Generation Values",
+      screenName: "Generation_Values",
+      description: "23923 Kwh",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Generation_Logo.png'),
+      cardBackground: "#EDE4FF",
     },
     {
       id: "3",
       name: "Cleaning",
       screenName: "Cleaning_Cycle",
-      thumbnail: 30,
-      iconComponent: <Feather name="cloud" size={24} color="black" />,
+      description: "6/24 cycles completed",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Cleaning_Logo.png'),
+      cardBackground: "#E4FFEE",
     },
     {
       id: "4",
       name: "Reports",
       screenName: "Reports",
-      thumbnail: 40,
-      iconComponent: <FontAwesome5 name="city" size={24} color="black" />,
+      description: "Report name\nDate: 12/2/24",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Reports_Logo.png'),
+      cardBackground: "#E4ECFF",
     },
     {
       id: "5",
       name: "EPI",
       screenName: "EPI",
-      thumbnail: 50,
-      iconComponent: <FontAwesome5 name="city" size={24} color="black" />
+      description: "80%",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Epi_Logo.png'),
+      cardBackground: "#E9FBFF",
     },
     {
       id: "6",
       name: "Plant Information",
       screenName: "PlantInformationScreen",
-      thumbnail: 60,
-      iconComponent: <FontAwesome5 name="city" size={24} color="black" />
+      description: "Vikram Solar Energy",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Plant_Info_Logo.png'),
+      cardBackground: "#FDE9FF",
     },
     {
       id: "7",
       name: "Irradiation",
       screenName: "IrradiationScreen",
-      thumbnail: 70,
-      iconComponent: <FontAwesome5 name="shopping-basket" size={24} color="black" />,
+      description: "20 kw/m^2",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Irradiation_Logo.png'),
+      cardBackground: "#E9F2FF",
     },
     {
       id: "8",
       name: "Financial Analysis",
       screenName: "Financial_Analysis",
-      thumbnail: 80,
-      iconComponent: <FontAwesome5 name="users" size={24} color="black" />,
+      description: "Revenue Earned: ₹34,222",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Financial_Analysis_Logo.png'),
+      cardBackground: "#E9FFEF",
     },
     {
       id: "9",
-      name: "Last",
-      screenName: "LastScreen",
-      thumbnail: 90,
-      iconComponent: <FontAwesome5 name="check-circle" size={24} color="black" />,
-    }
+      name: "Payment Tracking",
+      screenName: "Payment_Tracking_Screen",
+      description: "1000₹ Pending",
+      logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Payment_Tracking_Logo.png'),
+      cardBackground: "#F8FFE9",
+    },
   ];
 
   const handleWeatherCategoryPress = (screenName) => {
@@ -78,20 +85,19 @@ const Cards = () => {
 
   return (
     <View style={styles.container}>
-      {cardsData.map(({ id, name, iconComponent, screenName, thumbnail }) => (
+      {cardsData.map(({ id, name, description, screenName, logoimg, cardBackground }) => (
         <Pressable
           key={id}
           style={({ pressed }) => [
-            styles.button,
-            pressed && styles.selectedButton,
+            styles.card,
+            { backgroundColor: cardBackground },
+            pressed && styles.selectedCard,
           ]}
           onPress={() => handleWeatherCategoryPress(screenName)}
         >
-          {iconComponent}
-          <Text style={styles.text}>{name}</Text>
-          <View style={styles.thumbnailContainer}>
-            <Text style={styles.thumbnailText}>{thumbnail}%</Text>
-          </View>
+          <Image source={logoimg} style={styles.logo} />
+          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.description}>{description}</Text>
         </Pressable>
       ))}
     </View>
@@ -103,37 +109,34 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
-    marginTop: 20,
+    marginTop: 10,
   },
-  button: {
+  card: {
     alignItems: 'center',
     justifyContent: 'center',
     width: '45%',
     aspectRatio: 1,
     marginVertical: 10,
     borderRadius: 10,
-    backgroundColor: '#ffffff',
-    elevation: 5,
+    padding: 10,
+    elevation: 1,
   },
-  selectedButton: {
+  selectedCard: {
     backgroundColor: '#a0d8ef',
   },
-  icon: {
+  logo: {
+    width: 80,
+    height: 80,
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
     marginBottom: 5,
   },
-  text: {
+  description: {
     fontSize: 16,
-  },
-  thumbnailContainer: {
-    position: 'absolute',
-    top: 5,
-    right: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    borderRadius: 5,
-    padding: 2,
-  },
-  thumbnailText: {
-    fontSize: 10,
+    textAlign: 'center',
   },
 });
 

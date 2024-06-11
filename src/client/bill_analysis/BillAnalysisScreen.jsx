@@ -5,15 +5,58 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const data = [
-  { details: "1st Payment", amount: "100 Rs", status: "paid", date: "01-01-2023" },
-  { details: "2st Payment ", amount: "7,000 RS", status: "Paid", date: "15-02-2023" },
-  { details: "3nd Payment ", amount: "8,000 RS", status: "Pending", date: "20-03-2023" },
-  { details: "4rd payment ", amount: "2,000 RS", status: "pending", date: "01-04-2023" },
-  { details: "Payment track ", amount: "2,000 RS", status: "paid", date: "10-05-2023" }
+const billData = [
+  {
+    readingDate: '2024-01-01',
+    importReading: 1200,
+    exportReading: 300,
+    netReading: 900,
+    generationReading: 1500,
+    expectedBill: 2500,
+  },
+  {
+    readingDate: '2024-02-01',
+    importReading: 1100,
+    exportReading: 250,
+    netReading: 850,
+    generationReading: 1400,
+    expectedBill: 2300,
+  },
+  {
+    readingDate: '2024-03-01',
+    importReading: 1150,
+    exportReading: 200,
+    netReading: 950,
+    generationReading: 1600,
+    expectedBill: 2600,
+  },
+  {
+    readingDate: '2024-04-01',
+    importReading: 1250,
+    exportReading: 400,
+    netReading: 850,
+    generationReading: 1700,
+    expectedBill: 2700,
+  },
+  {
+    readingDate: '2024-05-01',
+    importReading: 1300,
+    exportReading: 450,
+    netReading: 850,
+    generationReading: 1650,
+    expectedBill: 2800,
+  },
+  {
+    readingDate: '2024-06-01',
+    importReading: 1350,
+    exportReading: 500,
+    netReading: 850,
+    generationReading: 1750,
+    expectedBill: 2900,
+  },
 ];
 
-const billIcon = require("../../../assets/billanalysis/billicon.png");
+const billIcon = require("../../../assets/clientdashboard/cardlogo/Bill_Analysis_Logo.png");
 
 const BillAnalysisScreen = () => {
   return (
@@ -21,25 +64,27 @@ const BillAnalysisScreen = () => {
       <View style={styles.descriptionContainer}>
         <Image source={billIcon} style={styles.image} />
         <Text style={styles.descriptionText}>
-        " Bill analysis with PV Protect: Your roadmap to solar sustainability, one payment at a time. "
-         </Text>
+          "Bill analysis with PV Protect: Your roadmap to solar sustainability"
+        </Text>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={true}>
         <View style={styles.tableContainer}>
           <View style={styles.tableHeaderRow}>
-            <Text style={styles.columnHeader}>Details</Text>
-            <Text style={styles.columnHeader}>Amount (RS)</Text>
-            <Text style={styles.columnHeader}>Status</Text>
-            <Text style={styles.columnHeader}>Date</Text>
+            <Text style={styles.columnHeader}>Reading Date</Text>
+            <Text style={styles.columnHeader}>Import Reading</Text>
+            <Text style={styles.columnHeader}>Export Reading</Text>
+            <Text style={styles.columnHeader}>Net Reading</Text>
+            <Text style={styles.columnHeader}>Generation Reading</Text>
+            <Text style={styles.columnHeader}>Expected Bill (RS)</Text>
           </View>
-          {data.map((item, index) => (
+          {billData.map((item, index) => (
             <View key={index} style={styles.tableRow}>
-              <Text style={styles.cell}>{item.details}</Text>
-              <Text style={styles.cell}>{item.amount}</Text>
-              <Text style={[styles.cell, item.status.toLowerCase() === 'paid' ? styles.statusPaid : styles.statusPending]}>
-                {item.status}
-              </Text>
-              <Text style={styles.cell}>{item.date}</Text>
+              <Text style={styles.cell}>{item.readingDate}</Text>
+              <Text style={styles.cell}>{item.importReading}</Text>
+              <Text style={styles.cell}>{item.exportReading}</Text>
+              <Text style={styles.cell}>{item.netReading}</Text>
+              <Text style={styles.cell}>{item.generationReading}</Text>
+              <Text style={styles.cell}>{item.expectedBill}</Text>
             </View>
           ))}
         </View>
@@ -83,6 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: hp('1%'),
+    paddingHorizontal: wp('2%'),
     borderBottomWidth: 1,
     borderColor: '#D1D1D1',
     backgroundColor: '#D1D1D1',
@@ -91,39 +137,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: wp('3%'),
+    paddingHorizontal: wp('2%'),
     paddingVertical: hp('1%'),
     borderBottomWidth: 1,
     borderColor: '#D1D1D1',
     backgroundColor: '#ECECEC',
   },
   columnHeader: {
-    width: wp('25%'),
+    width: wp('20%'),
     fontWeight: 'bold',
     textAlign: 'center',
     paddingVertical: hp('1%'),
   },
   cell: {
-    width: wp('25%'),
+    width: wp('20%'),
     textAlign: 'center',
     paddingVertical: hp('1%'),
     fontWeight: '300',
     fontSize: wp('4%'),
-  },
-  statusPaid: {
-    backgroundColor: '#A6FDB4',
-    color: '#000',
-    borderRadius: wp('5%'),
-    paddingVertical: hp('0.3%'),
-    paddingHorizontal: wp('0.5%'),
-    fontWeight: '400',
-  },
-  statusPending: {
-    backgroundColor: '#FFF0BB',
-    color: '#000npm',
-    borderRadius: wp('5%'),
-    paddingVertical: hp('0.3%'),
-    paddingHorizontal: wp('0.5%'),
-    fontWeight: '400',
   },
 });
