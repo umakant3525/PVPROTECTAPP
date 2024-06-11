@@ -48,31 +48,5 @@ export const cleaningData = [
     ],
     description: "Tidying up common areas. Swept hallways, arranged lobby furniture, and organized magazines."
   },
-  {
-    cycleNumber: 6,
-    date: "2024-05-25",
-    doneBy: "David",
-    workImages: [
-      "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
-    ],
-    description: "Outdoor cleaning tasks. Removed debris from entrance, watered plants, and cleaned exterior windows."
-  },
-  {
-    cycleNumber: 7,
-    date: "2024-05-26",
-    doneBy: "Sophia",
-    workImages: [
-      "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
-    ],
-    description: "Inventory check and organization. Checked stock levels, labeled shelves, and rearranged supplies."
-  },
-  {
-    cycleNumber: 8,
-    date: "2024-05-27",
-    doneBy: "Michael",
-    workImages: [
-      "https://tse1.mm.bing.net/th?id=OIP.2uHXb1vED4gzN_IQ63CjwQHaEK&pid=Api&P=0&h=180"
-    ],
-    description: "Final touch-ups before the weekend. Spot cleaned high-traffic areas, polished surfaces, and refreshed air."
-  }
+
 ];
