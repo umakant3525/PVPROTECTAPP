@@ -3,28 +3,27 @@ import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { useNavigation } from '@react-navigation/native';
 
-const TowardsLoginButton = () => {
+const LoginButton = () => {
   const navigation = useNavigation();
 
   const goToLoginScreen = () => {
-    navigation.navigate('ClientLoginScreen'); 
+    navigation.navigate('TechnicianDashboardScreen'); // Navigate to HomeScreen
   };
 
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={goToLoginScreen}>
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default TowardsLoginButton;
+export default LoginButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    position: 'absolute',
-    bottom: hp('10%'),
+    top: hp('10%'),
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
@@ -32,10 +31,11 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'black',
-    paddingVertical: wp('3%'),
-    paddingHorizontal: hp('10%'),
+    height: hp('6%'),
+    width: wp('80%'),
     borderRadius: 5,
     alignItems: 'center',
+    justifyContent: 'center', // Add this line
   },
   buttonText: {
     color: 'white',
@@ -43,3 +43,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+

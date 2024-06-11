@@ -6,7 +6,7 @@ import {
 } from "react-native-responsive-screen";
 
 const LoginImg = () => {
-  const clientLoginImg = require("../../../assets/login/clientlogin.png");
+  const clientLoginImg = require("../../../assets/login/technicianlogin.png");
 
   return (
     <View>
@@ -17,7 +17,7 @@ const LoginImg = () => {
           resizeMode="contain"
         />
       </View>
-      <Text style={styles.loginText}> User Login Here !</Text>
+      <Text style={styles.loginText}> Technician Login Here !</Text>
     </View>
   );
 };

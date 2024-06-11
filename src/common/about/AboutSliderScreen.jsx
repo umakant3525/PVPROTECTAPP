@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import Slides from "./data";
 import SlideItem from "./SlideItem";
 import Pagination from "./Pagination";
-import TowardsLoginButton from "./TowardsLoginButton";
+import TowardsRoleButton from "./TowardsRoleButton";
 
 const AboutSliderScreen = () => {
   const [index, setIndex] = useState(0);
@@ -49,7 +49,7 @@ const AboutSliderScreen = () => {
         viewabilityConfig={viewabilityConfig}
       />
       <Pagination data={Slides} scrollX={scrollX} index={index} />
-      <TowardsLoginButton/>
+      <TowardsRoleButton/>
     </View>
   );
 };
