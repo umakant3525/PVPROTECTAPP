@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
+
 
 const Cards = () => {
   const navigation = useNavigation();
@@ -110,6 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
     marginTop: 10,
+    marginBottom: hp("10%")
   },
   card: {
     alignItems: 'center',
