@@ -7,7 +7,7 @@ const LoginButton = () => {
   const navigation = useNavigation();
 
   const goToLoginScreen = () => {
-    navigation.navigate('ClientDashboardScreen'); // Navigate to HomeScreen
+    navigation.navigate('SelectPlantScreen'); // plant selection 
   };
 
   return (
