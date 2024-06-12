@@ -16,7 +16,7 @@ const data = [
 ];
 
 
-const financeIcon = require("../../../assets/financeanalysis/finance.png");
+const financeIcon = require("../../../assets/clientdashboard/cardlogo/Financial_Analysis_Logo.png");
 
 const FinancialAnalysisScreen = () => {
   return (
