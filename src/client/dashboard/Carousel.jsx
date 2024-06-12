@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { ScrollView, StyleSheet, Image, Dimensions, View, Animated } from "react-native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
@@ -13,10 +13,28 @@ const Carousel = () => {
   ];
 
   const scrollX = useRef(new Animated.Value(0)).current;
+  const scrollViewRef = useRef(null);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    // Start automatic scrolling
+    intervalRef.current = setInterval(() => {
+      scrollViewRef.current.scrollTo({
+        x: (scrollX._value + width) % (width * images.length),
+        animated: true,
+      });
+    }, 3000); // Change slide every 3 seconds
+
+    return () => {
+      // Clear interval on component unmount
+      clearInterval(intervalRef.current);
+    };
+  }, []);
 
   return (
     <View style={styles.container}>
       <ScrollView
+        ref={scrollViewRef}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
@@ -78,7 +96,7 @@ const styles = StyleSheet.create({
     marginVertical: hp('2%'),
   },
   paginationContainer: {
-    marginTop : ('2%'),
+    marginTop: hp('2%'),
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
