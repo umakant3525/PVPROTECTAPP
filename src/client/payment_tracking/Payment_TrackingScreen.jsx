@@ -1,49 +1,63 @@
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
-import React from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const data = [
-  { details: "1st Payment", amount: "100 Rs", status: "paid", date: "01-01-2023" },
-  { details: "2st Payment ", amount: "7,000 RS", status: "Paid", date: "15-02-2023" },
-  { details: "3nd Payment ", amount: "8,000 RS", status: "Pending", date: "20-03-2023" },
-  { details: "4rd payment ", amount: "2,000 RS", status: "pending", date: "01-04-2023" },
-  { details: "Payment track ", amount: "2,000 RS", status: "paid", date: "10-05-2023" }
-];
-
 const billIcon = require("../../../assets/clientdashboard/cardlogo/Payment_Tracking_Logo.png");
 
 const PaymentTrackingScreen = () => {
+  // Initial contract value
+  const contractValue = 10000;
+  
+  // State to manage payments and remaining balance
+  const [payments, setPayments] = useState([
+    { slot: '1st Payment', amount: 5000, date: '2024-01-01' },
+    { slot: '2nd Payment', amount: 3000, date: '2024-02-01' },
+    { slot: '4rd Payment', amount: 1000, date: '2024-03-01' },
+    { slot: '5th Payment', amount: 800, date: '2024-03-01' },
+    { slot: '6th Payment', amount: 200, date: '2024-03-01' },
+
+  ]);
+
+  const calculateRemaining = (payments, contractValue) => {
+    const totalPaid = payments.reduce((sum, payment) => sum + payment.amount, 0);
+    return contractValue - totalPaid;
+  };
+
+  const remainingAmount = calculateRemaining(payments, contractValue);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.descriptionContainer}>
         <Image source={billIcon} style={styles.image} />
         <Text style={styles.descriptionText}>
-        " Your payment tracked details  "
-         </Text>
+          Contract Value: {contractValue} RS
+        </Text>
+        <Text style={styles.descriptionText}>
+          Pending Amount: {remainingAmount} RS
+        </Text>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+
+      <View >
         <View style={styles.tableContainer}>
           <View style={styles.tableHeaderRow}>
-            <Text style={styles.columnHeader}>Details</Text>
-            <Text style={styles.columnHeader}>Amount (RS)</Text>
-            <Text style={styles.columnHeader}>Status</Text>
-            <Text style={styles.columnHeader}>Date</Text>
+            <Text style={styles.columnHeader}>Payment Slot</Text>
+            <Text style={styles.columnHeader}>Paid Amount (Date)</Text>
+            <Text style={styles.columnHeader}>Pending</Text>
           </View>
-          {data.map((item, index) => (
+          {payments.map((item, index) => (
             <View key={index} style={styles.tableRow}>
-              <Text style={styles.cell}>{item.details}</Text>
-              <Text style={styles.cell}>{item.amount}</Text>
-              <Text style={[styles.cell, item.status.toLowerCase() === 'paid' ? styles.statusPaid : styles.statusPending]}>
-                {item.status}
+              <Text style={styles.cell}>{item.slot}</Text>
+              <Text style={styles.cell}>{item.amount} ({item.date})</Text>
+              <Text style={styles.cell}>
+                {contractValue - payments.slice(0, index + 1).reduce((sum, payment) => sum + payment.amount, 0)}
               </Text>
-              <Text style={styles.cell}>{item.date}</Text>
             </View>
           ))}
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
@@ -53,7 +67,7 @@ export default PaymentTrackingScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: wp('3%'),
+    padding: wp('1%'),
     backgroundColor: '#F8F8F8',
   },
   descriptionContainer: {
@@ -61,7 +75,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   descriptionText: {
-    fontSize: wp('4%'),
+    fontSize: wp('5%'),
     textAlign: 'center',
     color: '#333',
     marginTop: hp('1%'),
@@ -75,8 +89,8 @@ const styles = StyleSheet.create({
   },
   tableContainer: {
     borderRadius: 8,
+    padding: wp('1%'),
     overflow: 'hidden',
-    width: wp('120%'),  // Ensure the table is wider than the screen
   },
   tableHeaderRow: {
     flexDirection: 'row',
@@ -109,21 +123,5 @@ const styles = StyleSheet.create({
     paddingVertical: hp('1%'),
     fontWeight: '300',
     fontSize: wp('4%'),
-  },
-  statusPaid: {
-    backgroundColor: '#A6FDB4',
-    color: '#000',
-    borderRadius: wp('5%'),
-    paddingVertical: hp('0.3%'),
-    paddingHorizontal: wp('0.5%'),
-    fontWeight: '400',
-  },
-  statusPending: {
-    backgroundColor: '#FFF0BB',
-    color: '#000npm',
-    borderRadius: wp('5%'),
-    paddingVertical: hp('0.3%'),
-    paddingHorizontal: wp('0.5%'),
-    fontWeight: '400',
   },
 });

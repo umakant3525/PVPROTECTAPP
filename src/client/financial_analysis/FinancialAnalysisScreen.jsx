@@ -31,7 +31,7 @@ const FinancialAnalysisScreen = () => {
 
         <View style={styles.tableContainer}>
           <View style={styles.tableHeaderRow}>
-            <Text style={styles.columnHeader}>Data</Text>
+            <Text style={styles.columnHeader}>Details</Text>
             <Text style={styles.columnHeader}>Values</Text>
           </View>
           {data.map((item, index) => (
