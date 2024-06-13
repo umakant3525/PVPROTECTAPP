@@ -13,9 +13,9 @@ const ContactsScreen = () => {
     const navigation = useNavigation();
 
     const contactData = [
-        { id: "contact1", name: "John Doe", email: "john@example.com", mobile: "1234567890", profileicon: "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" },
-        { id: "contact2", name: "Jane Smith", email: "jane@example.com", mobile: "0987654321", profileicon: "https://cdn2.vectorstock.com/i/1000x1000/41/11/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" },
-        { id: "contact3", name: "Alice Johnson", email: "alice@example.com", mobile: "1112223333" },
+        { id: "contact1", name: "Ruturaj Deshmukh", email: "john@example.com", mobile: "7249780908", profileicon: "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" },
+        { id: "contact2", name: "Umakant Shinde ", email: "umakant3525@gmail.com", mobile: "9529342940", profileicon: "https://cdn2.vectorstock.com/i/1000x1000/41/11/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" },
+        { id: "contact3", name: "Jineet Vishnav", email: "alice@example.com", mobile: "1112223333" },
         { id: "contact4", name: "Bob Brown", email: "bob@example.com", mobile: "4445556666" },
         { id: "contact5", name: "Charlie Davis", email: "charlie@example.com", mobile: "7778889999", profileicon : "https://cdn5.vectorstock.com/i/1000x1000/72/59/female-avatar-profile-icon-round-african-american-vector-18307259.jpg" },
         { id: "contact6", name: "David Evans", email: "david@example.com", mobile: "0001112222" },
