@@ -24,9 +24,6 @@ const FinancialAnalysisScreen = () => {
       <ScrollView>
         <View style={styles.descriptionContainer}>
           <Image source={financeIcon} style={styles.image} />
-          <Text style={styles.descriptionText}>
-            "Power your future with green finance with PV protect."
-          </Text>
         </View>
 
         <View style={styles.tableContainer}>
@@ -57,14 +54,6 @@ const styles = StyleSheet.create({
   descriptionContainer: {
     marginVertical: hp('2%'),
     alignItems: 'center', // Center align items in the description container
-  },
-  descriptionText: {
-    fontSize: wp('4%'),
-    textAlign: 'center',
-    color: '#333',
-    marginTop: hp('1%'), // Add margin top to separate text from image
-    paddingHorizontal: wp('5%'), // Add horizontal padding for better text alignment
-    fontStyle: 'italic', // Make text italic
   },
   image: {
     width: wp('20%'), // Adjust width as needed

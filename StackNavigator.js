@@ -39,10 +39,9 @@ const StackNavigator = () => {
         <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
         <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
         <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
-        <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} />
-        <Stack.Screen name="IrradiationScreen" component={IrradiationScreen} />
+        <Stack.Screen name="Plant_Information" component={PlantInformationScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="Irradiation" component={IrradiationScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
         <Stack.Screen name="Financial_Analysis" component={FinancialAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
-
         <Stack.Screen name="Payment_Tracking_Screen" component={PaymentTrackingScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
 
         {/* technicain screnns  */}

@@ -63,9 +63,6 @@ const BillAnalysisScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.descriptionContainer}>
         <Image source={billIcon} style={styles.image} />
-        <Text style={styles.descriptionText}>
-          "Bill analysis with PV Protect: Your roadmap to solar sustainability"
-        </Text>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={true}>
         <View style={styles.tableContainer}>
@@ -104,14 +101,6 @@ const styles = StyleSheet.create({
   descriptionContainer: {
     marginVertical: hp('2%'),
     alignItems: 'center',
-  },
-  descriptionText: {
-    fontSize: wp('4%'),
-    textAlign: 'center',
-    color: '#333',
-    marginTop: hp('1%'),
-    paddingHorizontal: wp('5%'),
-    fontStyle: 'italic',
   },
   image: {
     width: wp('20%'),

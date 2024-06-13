@@ -50,7 +50,7 @@ const Cards = () => {
     {
       id: "6",
       name: "Plant Information",
-      screenName: "PlantInformationScreen",
+      screenName: "Plant_Information",
       description: "Vikram Solar Energy",
       logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Plant_Info_Logo.png'),
       cardBackground: "#FDE9FF",
@@ -58,7 +58,7 @@ const Cards = () => {
     {
       id: "7",
       name: "Irradiation",
-      screenName: "IrradiationScreen",
+      screenName: "Irradiation",
       description: "20 kw/m^2",
       logoimg: require('/home/umakant/Desktop/my-app/assets/clientdashboard/cardlogo/Irradiation_Logo.png'),
       cardBackground: "#E9F2FF",
