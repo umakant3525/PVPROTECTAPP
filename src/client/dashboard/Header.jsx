@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   error: {
-    fontSize: 16,
+    fontSize: wp('2%'),
     color: "red",
-    marginTop: 10,
+    marginTop: 1,
   },
   ownerInfoContainer: {
     marginLeft: wp("2%"),

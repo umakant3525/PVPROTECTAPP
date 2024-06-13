@@ -16,16 +16,16 @@ const SelectPlantScreen = () => {
     const navigation = useNavigation();
 
     const plantdata = [
-        { plantid: "pvplant1", plantname: "Ruturaj Plant", location: "Karvenagar, Pune" },
-        { plantid: "pvplant2", plantname: "Ram Plant", location: "Nanded, Pune" },
-        { plantid: "pvplant3", plantname: "Ratan Plant", location: "Karvenagar, Pune" },
-        { plantid: "pvplant4", plantname: "Amol Plant", location: "Waraje, Pune" },
-        { plantid: "pvplant5", plantname: "Jineet Plant", location: "Hadapsar, Pune" },
-        { plantid: "pvplant11", plantname: "Prasad Plant", location: "Karvenagar, NAshik" },
-        { plantid: "pvplant21", plantname: "Amey Plant", location: "Nanded, Pune" },
-        { plantid: "pvplant33", plantname: "Ruturaj Plant", location: "Karvenagar, Mumbai" },
-        { plantid: "pvplant45", plantname: "Isha Plant", location: "Waraje, Satara" },
-        { plantid: "pvplant95", plantname: "AnushakaPlant", location: ", Kasol" }
+        { plantid: "pvplant1", plantname: "Ruturaj Plant 1", location: "Karvenagar, Pune" },
+        { plantid: "pvplant2", plantname: "Ruturaj Plant 2", location: "Nanded, Pune" },
+        { plantid: "pvplant3", plantname: "Ruturaj Plant 3", location: "Karvenagar, Pune" },
+        { plantid: "pvplant4", plantname: "Ruturaj Plant 4", location: "Waraje, Pune" },
+        { plantid: "pvplant5", plantname: "Ruturaj Plant 5", location: "Hadapsar, Pune" },
+        { plantid: "pvplant11", plantname: "Ruturaj Plant 6", location: "Karvenagar, Nashik" },
+        { plantid: "pvplant21", plantname: "Ruturaj Plant 7", location: "Nanded, Pune" },
+        { plantid: "pvplant33", plantname: "Ruturaj Plant 8", location: "Karvenagar, Mumbai" },
+        { plantid: "pvplant45", plantname: "Ruturaj Plant 9", location: "Waraje, Satara" },
+        { plantid: "pvplant95", plantname: "Ruturaj Plant 10", location: "Manikarn , Kasol" }
     ];
 
     const [search, setSearch] = useState('');

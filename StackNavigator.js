@@ -30,19 +30,20 @@ const StackNavigator = () => {
         <Stack.Screen name="SelectRoleScreen" component={SelectRoleScreen} options={{ headerShown: false }} />
 
         {/* client screens */}
-        {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="SelectPlantScreen" component={SelectPlantScreen} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  /> */}
+        <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="SelectPlantScreen" component={SelectPlantScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  />
 
-        {/* <Stack.Screen name="Bill_Analysis" component={BillAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="Generation_Values" component={GenerationScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} /> */}
-        {/* <Stack.Screen name="IrradiationScreen" component={IrradiationScreen} /> */}
-        {/* <Stack.Screen name="Financial_Analysis" component={FinancialAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
-        {/* <Stack.Screen name="Payment_Tracking_Screen" component={PaymentTrackingScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
+        <Stack.Screen name="Bill_Analysis" component={BillAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="Generation_Values" component={GenerationScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="Cleaning_Cycle" component={CleaningMainScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="Reports" component={ReportsScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="EPI" component={EpiScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+        <Stack.Screen name="PlantInformationScreen" component={PlantInformationScreen} />
+        <Stack.Screen name="IrradiationScreen" component={IrradiationScreen} />
+        <Stack.Screen name="Financial_Analysis" component={FinancialAnalysisScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
+
+        <Stack.Screen name="Payment_Tracking_Screen" component={PaymentTrackingScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} />
 
         {/* technicain screnns  */}
         <Stack.Screen name="TechnicianLoginScreen" component={TechnicianLoginScreen} options={{ headerShown: false }} />

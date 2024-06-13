@@ -49,7 +49,7 @@ const useLocation = () => {
           });
         }
       } catch (error) {
-        console.error("Error in getting address details: ", error);
+        console.error("Error in getting current address. ", error);
         setLocationData(prevState => ({
           ...prevState,
           errorMessage: "Error in getting address details.",
