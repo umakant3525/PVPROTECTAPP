@@ -47,9 +47,9 @@ const StackNavigator = () => {
 
         {/* technicain screnns  */}
         {/* <Stack.Screen name="TechnicianLoginScreen" component={TechnicianLoginScreen} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="WorkScreen" component={WorkScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="ContactsScreen" component={ContactsScreen} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="WorkScreen" component={WorkScreen} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="ContactsScreen" component={ContactsScreen} options={{ headerShown: false }} /> */}
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} options={{ headerShown: false }} />
 
 
