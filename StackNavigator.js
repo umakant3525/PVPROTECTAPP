@@ -20,8 +20,8 @@ import ContactsScreen from './src/technician/contants/ContactsScreen';
 import HistoryScreen from './src/technician/history/HistoryScreen';
 import WorkScreen from './src/technician/work/WorkScreen';
 import HomeScreen from './src/technician/home/HomeScreen';
-import VisitFormScreen from './src/technician/work/VisitFormScreen';
 import SafetyFormScreen from './src/technician/work/safety/SafetyFormScreen';
+import VisitFormScreen from './src/technician/work/visitform/VisitFormScreen';
 
 const Stack = createNativeStackNavigator();
 

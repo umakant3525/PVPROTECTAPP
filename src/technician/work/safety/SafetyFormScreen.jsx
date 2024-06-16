@@ -69,7 +69,7 @@ const SafetyFormScreen = ({ navigation }) => {
       <Text style={styles.title}>Safety Verification</Text>
 
       <View style={styles.shadowBorderContainer}>
-        {/* {!selectedImage ? (
+        {!selectedImage ? (
           <BeforeImageSelection selectImage={selectImage} uploadImagelogo={uploadImagelogo} />
         ) : (
           <AfterImageSelection
@@ -77,12 +77,7 @@ const SafetyFormScreen = ({ navigation }) => {
             deleteImage={deleteImage}
             startUpload={startUpload} // Pass startUpload function
           />
-        )} */}
-          <AfterImageSelection
-            selectedImage={selectedImage} // Pass selected image URI
-            deleteImage={deleteImage}
-            startUpload={startUpload} // Pass startUpload function
-          />
+        )}
 
         {uploading && (
           <UploadImageComponent

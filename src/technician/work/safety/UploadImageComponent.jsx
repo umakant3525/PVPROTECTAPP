@@ -24,7 +24,7 @@ const UploadImageComponent = ({ progress, uploading, uploadedImage, navigation }
           onPress={gotoVisitFormScreen}
           disabled={!uploadedImage || progress !== 1}
         >
-          <Text style={styles.buttonText}>Next</Text>
+          <Text style={styles.buttonText}>VisitFormScreen</Text>
         </TouchableOpacity>
       </View>
     </View>
