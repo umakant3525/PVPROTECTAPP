@@ -35,19 +35,21 @@ export default RuleBox;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: wp("1%"),
-    marginBottom: hp("10%"),
     marginHorizontal: wp('2%'),
-    padding: wp('3%'),
-    backgroundColor: '#f9f9f9',
+    padding: wp('5%'),
+    backgroundColor: '#E4FFEE',
     borderRadius: 10,
     borderColor : "#33333359",
     borderWidth : 1,
   },
   title: {
-    fontSize: hp('3.5%'), // Slightly increased for better visibility
-    fontWeight: 'bold',
-    marginBottom: hp('2%'), // Slightly increased for better spacing
+    fontSize: hp('3%'), // Slightly increased for better visibility
+    fontWeight: '400',
+    marginBottom: hp('1%'), // Slightly increased for better spacing
+    backgroundColor : "#33333359",
+    color : "#ffff",
+    textAlign : "center",
+    borderRadius: 10,
   },
   ruleContainer: {
     marginBottom: hp('1%'), // Increased for better separation between rules

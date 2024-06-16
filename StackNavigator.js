@@ -20,6 +20,8 @@ import ContactsScreen from './src/technician/contants/ContactsScreen';
 import HistoryScreen from './src/technician/history/HistoryScreen';
 import WorkScreen from './src/technician/work/WorkScreen';
 import HomeScreen from './src/technician/home/HomeScreen';
+import SafetyFormScreen from './src/technician/work/SafetyFormScreen';
+import VisitFormScreen from './src/technician/work/VisitFormScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,14 +48,14 @@ const StackNavigator = () => {
         {/* <Stack.Screen name="Payment_Tracking_Screen" component={PaymentTrackingScreen} options={{ headerTitleAlign: 'center', headerfont: 2.5, headerTitleStyle: { fontWeight: 'bold' } }} /> */}
 
         {/* technicain screnns  */}
-        {/* <Stack.Screen name="TechnicianLoginScreen" component={TechnicianLoginScreen} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="TechnicianLoginScreen" component={TechnicianLoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="WorkScreen" component={WorkScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ContactsScreen" component={ContactsScreen} options={{ headerShown: false }} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} options={{ headerShown: false }} />
-
-
-
+        <Stack.Screen name="SafetyFormScreen" component={SafetyFormScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="VisitFormScreen" component={VisitFormScreen} options={{ headerShown: false }} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
