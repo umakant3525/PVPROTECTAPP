@@ -17,7 +17,7 @@ const BottomButton = () => {
                 <MaterialIcons name="home" size={24} color="#808080" />
                 <Text style={{ color: '#808080' }}>Home</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => handlePress('WorkScreen')}>
+            <TouchableOpacity style={styles.button} onPress={() => handlePress('SelectClientScreen')}>
                 <MaterialIcons name="work" size={24} color="#808080" />
                 <Text style={{ color: '#808080' }}>Work</Text>
             </TouchableOpacity>
