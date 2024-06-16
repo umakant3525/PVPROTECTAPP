@@ -7,7 +7,7 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpa
 import { Ionicons, Feather } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
-import BottomButton from '../bottombutton/BottomButton';
+import BottomButton from '../../bottombutton/BottomButton';
 
 
 
@@ -44,7 +44,7 @@ const SelectPlantbyTechicianScreen = () => {
 
     const handleItemPress = (plantid) => {
         console.log(plantid);
-        navigation.navigate('WorkScreen'); // Navigate to dashboard
+        navigation.navigate('WorkAprovalScreen'); // Navigate to dashboard
     };
 
     const renderItem = ({ item }) => (

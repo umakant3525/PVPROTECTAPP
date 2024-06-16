@@ -18,12 +18,12 @@ import PaymentTrackingScreen from './src/client/payment_tracking/Payment_Trackin
 import SelectPlantScreen from './src/client/selectplant/SelectPlantScreen';
 import ContactsScreen from './src/technician/contants/ContactsScreen';
 import HistoryScreen from './src/technician/history/HistoryScreen';
-import WorkScreen from './src/technician/work/WorkScreen';
 import HomeScreen from './src/technician/home/HomeScreen';
 import SafetyFormScreen from './src/technician/work/safety/SafetyFormScreen';
 import VisitFormScreen from './src/technician/work/visitform/VisitFormScreen';
-import SelectClientScreen from './src/technician/selectclient/SelectClientScreen';
-import SelectPlantbyTechicianScreen from './src/technician/selectplant/SelectPlantbyTechicianScreen';
+import WorkAprovalScreen from './src/technician/work/WorkAprovalScreen';
+import SelectClientScreen from './src/technician/work/selectclient/SelectClientScreen';
+import SelectPlantbyTechicianScreen from './src/technician/work/selectplant/SelectPlantbyTechicianScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,8 +55,8 @@ const StackNavigator = () => {
 
 
         <Stack.Screen name="SelectClientScreen" component={SelectClientScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="WorkScreen" component={WorkScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SelectPlantbyTechicianScreen" component={SelectPlantbyTechicianScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="WorkAprovalScreen" component={WorkAprovalScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SafetyFormScreen" component={SafetyFormScreen} options={{ headerShown: false }} />
         <Stack.Screen name="VisitFormScreen" component={VisitFormScreen} options={{ headerShown: false }} />
 

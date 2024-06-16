@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import RuleBox from "../home/RuleBox";
 import BottomButton from "../bottombutton/BottomButton";
 
-const WorkScreen = () => {
+const WorkAprovalScreen = () => {
   const navigation = useNavigation();
   const [isChecked, setIsChecked] = useState(false);
 
@@ -119,7 +119,7 @@ const WorkScreen = () => {
   );
 };
 
-export default WorkScreen;
+export default WorkAprovalScreen;
 
 const styles = StyleSheet.create({
   container: {
