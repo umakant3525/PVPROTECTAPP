@@ -13,7 +13,7 @@ const CleaningPopUp = ({ cycle, onClose, visible }) => {
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <TouchableOpacity onPress={onClose} style={styles.closeIcon}>
-            <MaterialCommunityIcons name="close-circle-outline" size={24} color="#00C766" />
+            <MaterialCommunityIcons name="close" size={30} color="#00C766" />
           </TouchableOpacity>
           <Text style={styles.title}> Cycle No. {cycle.cycleNumber}</Text>
           <View style={styles.textRow}>
@@ -48,11 +48,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Increased opacity
   },
   modalView: {
     width: wp('90%'),
-    backgroundColor: '#E4FFEE',
+    backgroundColor: '#fff',
     borderRadius: 25,
     padding: 15,
     borderColor: '#00C766',

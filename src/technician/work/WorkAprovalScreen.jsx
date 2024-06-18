@@ -5,7 +5,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { useNavigation } from '@react-navigation/native';
 import RuleBox from "../home/RuleBox";
-import BottomButton from "../bottombutton/BottomButton";
 
 const WorkAprovalScreen = () => {
   const navigation = useNavigation();
@@ -114,7 +113,6 @@ const WorkAprovalScreen = () => {
           </Text>
         </View>
       </ScrollView>
-      <BottomButton />
     </SafeAreaView>
   );
 };

@@ -7,7 +7,6 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpa
 import { Ionicons, Feather } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
-import BottomButton from '../../bottombutton/BottomButton';
 
 
 
@@ -60,7 +59,7 @@ const SelectPlantbyTechicianScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Select Your Plant</Text>
+            <Text style={styles.title}>Select Plant</Text>
             <View style={[styles.textinputcontainer, isSearching && styles.textinputcontainerActive]}>
                 <TextInput
                     style={[styles.textInput, isSearching && styles.textInputActive]}
@@ -80,7 +79,6 @@ const SelectPlantbyTechicianScreen = () => {
                     contentContainerStyle={styles.listContainer}
                 />
             )}
-            <BottomButton/>
         </SafeAreaView>
     );
 };
