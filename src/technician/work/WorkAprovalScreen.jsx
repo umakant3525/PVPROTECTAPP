@@ -3,26 +3,29 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, TouchableOpacity } fr
 import { CheckBox, Icon } from "react-native-elements";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import RuleBox from "../home/RuleBox";
 
 const WorkAprovalScreen = () => {
-  const navigation = useNavigation();
-  const [isChecked, setIsChecked] = useState(false);
+    const navigation = useNavigation();
+    const route = useRoute();
+    const { clientId, clientName, plantid, plantname, location } = route.params;
 
-  const selectedData = {
-    plantid: "plant1",
-    plantname: "Plant1 Umakant",
-    clientid: "clientid1",
-    clientname: "Ruturaj client1",
-    plantlocation: "Waraje, Pune",
-  };
+    const [isChecked, setIsChecked] = useState(false);
 
-  const gositevisitScreen = () => {
-    if (isChecked) {
-      navigation.navigate('SafetyFormScreen'); // plant selection 
-    }
-  };
+    const selectedData = {
+        plantid: plantid,
+        plantname: plantname,
+        clientid: clientId,
+        clientname: clientName,
+        plantlocation: location,
+    };
+
+    const gositevisitScreen = () => {
+        if (isChecked) {
+            navigation.navigate('SafetyFormScreen'); // Navigate to SafetyFormScreen after site visit
+        }
+    };
 
   return (
     <SafeAreaView style={styles.container}>
