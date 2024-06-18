@@ -82,12 +82,12 @@ const Header = () => {
             >
               <Ionicons name="close" size={24} color="black" />
             </TouchableOpacity>
-            <Text style={styles.modalTitle}>Profile Information</Text>
+            <Text style={styles.modalTitle}> Your Profile </Text>
             <View style={styles.modalContent}>
               <View style={styles.modalmaincontent}>
                 <Image source={profileicon} style={styles.profileIconModal} />
                 <View style={styles.infoItem}>
-                  <Text style={styles.modalItem}>Ruturaj Patil</Text>
+                  <Text style={styles.modalowner}>Ruturaj Patil</Text>
                 </View>
               </View>
 
@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContainer: {
     width: wp("85%"),
@@ -235,8 +234,8 @@ const styles = StyleSheet.create({
     right: 10,
   },
   modalTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 15,
+    fontWeight: "50",
     marginBottom: 15,
   },
   modalmaincontent: {
@@ -249,10 +248,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 5,
   },
+  modalowner :{
+    fontSize : 20,
+    fontWeight : "bold"
+  },
   infoItem: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 5,
   },
   icon: {
     marginRight: 10,
