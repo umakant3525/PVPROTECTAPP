@@ -16,7 +16,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 const SelectPlantbyTechicianScreen = () => {
     const navigation = useNavigation();
     const route = useRoute();
-    const { clientId, clientName } = route.params; // Receive clientId and clientName from previous screen
+    const { clientId, clientName } = route.params;
 
     const plantdata = [
         { plantid: "pvplant1", plantname: "client1_Plant_No1", location: "Karvenagar, Pune" , ownerRef: "pvclient1"},
@@ -89,7 +89,7 @@ const SelectPlantbyTechicianScreen = () => {
                 <Text style={styles.plantLocation}>{item.location}</Text>
                 <Text style={styles.plantId}>{item.plantid}</Text>
             </View>
-            <Ionicons name="chevron-forward" size={wp("5%")} color="black" style={styles.icon} />
+            <Ionicons name="chevron-forward" size={wp('6%')} color="black" style={styles.icon} />
         </TouchableOpacity>
     );
 
@@ -122,11 +122,13 @@ const SelectPlantbyTechicianScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('4%'),
+        padding: wp('2%'),
+        backgroundColor: '#fff'
     },
     title: {
         fontSize: hp('3%'),
         fontWeight: 'bold',
+        marginTop: hp('5%'),
         marginBottom: hp('2%'),
         textAlign: 'center',
     },
@@ -135,21 +137,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#ccc',
-        borderRadius: wp('4%'),
-        paddingVertical: hp('1.5%'),
-        paddingHorizontal: wp('3%'),
+        borderRadius: wp('2%'),
+        padding: wp('2%'),
         marginBottom: hp('2%'),
     },
     textinputcontainerActive: {
-        borderColor: '#00C766',
+        borderColor: 'gray',
     },
     textInput: {
         flex: 1,
         marginRight: wp('2%'),
-        fontSize: hp('2%'),
+        fontSize: wp('4%'),
     },
     textInputActive: {
-        borderColor: '#00C766',
+        borderColor: 'gray',
     },
     listContainer: {
         paddingBottom: hp('2%'),
@@ -161,34 +162,34 @@ const styles = StyleSheet.create({
         padding: wp('4%'),
         borderBottomWidth: 1,
         borderBottomColor: '#eee',
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderColor: '#ccc',
-        borderRadius: wp('4%'),
-        marginBottom: hp('1.5%'),
+        borderRadius: wp('2%'),
+        marginBottom: hp('1%'),
+        backgroundColor: '#fff',
     },
     itemTextContainer: {
         marginLeft: wp("4%"),
         flex: 1,
     },
     plantName: {
-        fontSize: hp('2.2%'),
-        fontWeight: 'bold',
+        fontSize: wp('4.5%'),
     },
     plantLocation: {
-        fontSize: hp('1.8%'),
+        fontSize: wp('3.5%'),
         color: '#555',
     },
     plantId: {
-        fontSize: hp('1.5%'),
+        fontSize: wp('3%'),
         color: '#999',
     },
     icon: {
-        marginLeft: wp('1%'),
+        marginLeft: 8,
     },
     noResultsText: {
         textAlign: 'center',
-        fontSize: hp('2%'),
-        color: '#F9414',
+        fontSize: wp('4.5%'),
+        color: '#F94144',
     },
 });
 

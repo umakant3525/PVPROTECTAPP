@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
-import {
     SafeAreaView,
     StyleSheet,
     Text,
@@ -16,6 +12,7 @@ import {
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import BottomButton from '../../bottombutton/BottomButton';
 
 const SelectClientScreen = () => {
@@ -61,7 +58,7 @@ const SelectClientScreen = () => {
                     <MaterialCommunityIcons name="email" size={wp('4%')} color="black" /> {item.email}
                 </Text>
             </View>
-            <Ionicons name="arrow-forward" size={24} color="black" />
+            <Ionicons name="arrow-forward" size={wp('6%')} color="black" />
         </TouchableOpacity>
     );
 
@@ -99,11 +96,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     title: {
-        fontSize: wp('6%'),
+        fontSize: hp('3%'),
         fontWeight: 'bold',
-        marginTop: hp('5%'),
+        marginTop : hp('5%'),
+        marginBottom: hp('2%'),
         textAlign: 'center',
-        marginVertical: hp('2%')
     },
     textinputcontainer: {
         flexDirection: 'row',
