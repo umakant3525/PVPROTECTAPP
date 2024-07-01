@@ -111,6 +111,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // semi-transparent black color
+    backgroundColor: 'rgba(0, 0, 0, 0.2)', // semi-transparent black color
   },
 });

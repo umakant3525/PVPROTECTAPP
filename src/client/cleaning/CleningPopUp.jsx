@@ -52,10 +52,8 @@ const styles = StyleSheet.create({
   modalView: {
     width: wp('90%'),
     backgroundColor: '#fff',
-    borderRadius: 25,
+    borderRadius: 10,
     padding: 15,
-    borderColor: '#00C766',
-    borderWidth: 0.5,
     alignItems: 'center',
   },
   closeIcon: {
