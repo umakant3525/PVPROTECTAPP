@@ -3,17 +3,18 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const rules = [
-    { title: "Wear Uniform and Helmet", description: "Ensure you are in your complete uniform with a safety helmet." },
-    { title: "Safety Gear", description: "Use safety glasses, gloves, and non-slip shoes." },
-    { title: "Check Weather Conditions", description: "Only proceed if weather conditions are safe." },
-    { title: "Carry Tools", description: "Take all necessary tools including screwdrivers, wrenches, and multimeters." },
-    { title: "Inspect Equipment", description: "Ensure all equipment is in working order before use." },
-    { title: "Follow Safety Protocols", description: "Adhere to all site-specific safety protocols." },
-    { title: "Take Clear Photos", description: "Capture clear photos of the work area and completed tasks." },
-    { title: "Verify Client Details", description: "Double-check the client details and plant location before starting." },
-    { title: "Lockout/Tagout Procedures", description: "Follow lockout/tagout procedures to ensure the system is safely de-energized." },
-    { title: "Clean Up", description: "Clean the work area and ensure no tools or materials are left behind." }
+  { title: "Cleaning Cycle Communication", description: "Ensure that cleaning cycle date and time are communicated to the client." },
+  { title: "Client Notification", description: "Inform the client or client representative about the cleaning activity after reaching the site." },
+  { title: "Admin Notification", description: "Inform the admin after reaching the site." },
+  { title: "Tool Bag", description: "Ensure that you are carrying a tool bag with you." },
+  { title: "Safety Equipment", description: "Ensure that you are wearing all safety equipment." },
+  { title: "Cleaning Activity", description: "Complete the cleaning activity with maximum accuracy, using less water, and ensure that the lower edge of the module is cleaned properly." },
+  { title: "Photo Documentation", description: "Capture before and after photos of the modules." },
+  { title: "Meter Readings", description: "Capture the net meter and generation meter readings, along with a photo of the inverter status." },
+  { title: "Client Signature", description: "After completion of the activity, get the client's signature." },
+  { title: "Site Sign Off", description: "Sign off from the site after informing the manager." }
 ];
+
 
 const RuleBox = () => {
   return (
@@ -55,12 +56,12 @@ const styles = StyleSheet.create({
     marginBottom: hp('1%'), // Increased for better separation between rules
   },
   ruleTitle: {
-    fontSize: hp('2%'), // Increased for better readability
+    fontSize: hp('1.6%'), // Increased for better readability
     fontWeight: '500',
     color: '#000',
   },
   ruleDescription: {
-    fontSize: hp('1.5%'), // Increased for better readability
+    fontSize: hp('1.8%'), // Increased for better readability
     color: '#555',
     marginLeft: wp('5%'), // Slightly increased for better alignment
   }

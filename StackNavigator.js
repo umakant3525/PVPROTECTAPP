@@ -31,11 +31,11 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} /> */}
-        {/* <Stack.Screen name="SelectRoleScreen" component={SelectRoleScreen} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="AboutSliderScreen" component={AboutSliderScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="SelectRoleScreen" component={SelectRoleScreen} options={{ headerShown: false }} />
 
         {/* client screens */}
-        {/* <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="ClientLoginScreen" component={ClientLoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SelectPlantScreen" component={SelectPlantScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ClientDashboardScreen" component={ClientDashboardScreen} options={{ headerShown: false }}  />
 
